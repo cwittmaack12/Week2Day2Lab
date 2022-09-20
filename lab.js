@@ -4,9 +4,12 @@
   Give it a key of name with the value being your name, and another key of age with the value being your age.
 */
 
-//Code here
+const me = {
+  name: 'Cody',
+  age:  36,
+};
 
-
+console.log(me)
 
 //////////////////////////// PROBLEM 2 ////////////////////////////
 
@@ -17,7 +20,12 @@
 
 //Code here
 
-
+const dog = {
+  name: 'Fred',
+  color:  'brown',
+  age:  12,
+  goodBoy:  true,
+};
 
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
@@ -25,13 +33,15 @@
 //Code here
 
 
+console.log(dog.name)
+
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
 /* Print out the color of the dog you created in problem 2 using bracket-notation. */
 
 //Code here
 
-
+console.log(dog['color'])
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
 /*
@@ -41,6 +51,14 @@
 
 //Code here
 
+const favoriteThings = {
+  band:  "Taking Back Sunday",
+  food:  "tacos",
+  person:  "Amanda",
+  book:  "Coding for Dummies",
+  movie:  "A Few Good Men",
+  holiday:  "Christmas",
+};
 
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'show' with the value being your favorite show.
@@ -48,11 +66,17 @@
 
 //Code here
 
+favoriteThings.car = "Acura"
 
+console.log(favoriteThings)
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
   and change the value of the book key in your favoriteThings object to be 'Harry Potter'. (If they were either of those things already, change them to something else.)
 */
+
+favoriteThings.food = "Chicken Nuggets"
+favoriteThings ['book'] = "Harry Potter"
+console.log (favoriteThings)
 
 //Code here
 
@@ -74,6 +98,16 @@ var carDetails = {
 
 //Code Here
 
+//let carColor = carDetails.color
+//let carMake = carDetails.make
+//let carModel = carDetails.model
+//let carYear = carDetails.year
+
+let {color, make, model, year} = carDetails
+
+
+
+console.log(`I drive a ${year} ${make} ${model} that is ${color}`)
 
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
@@ -84,13 +118,19 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
-function greeting( obj ) {
+
   //Code Here
-  
+  function greeting() {
+  let object = {
+  title: "senor",
+  firstName: "Cody",
+  lastName:  "Wittmaack",
+  }
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
 }
+console.log(greeting(object))
 
 
 
@@ -106,6 +146,20 @@ function greeting( obj ) {
 
 //Code Here
 
+const states = {
+  Utah: 5,
+  California: 7,
+  Texas: 6,
+  Arizona: 4,
+};
+
+let totalPopulation = (statesObject) => {
+  let {Utah, California, Texas, Arizona} = statesObject;
+
+  return Utah + California + Texas + Arizona
+}
+console.log(totalPopulation(states))
+
 
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
@@ -120,6 +174,18 @@ function greeting( obj ) {
 
 //Code Here
 
+const food = {
+  carb: "yum",
+  fat: "yuck",
+  protein: "you lift bro?",
+};
+
+let ingredients = (object1) => {
+ let {carb, fat, protein} = object1
+ let array = [object1]
+return array
+}
+console.log(ingredients(food))
 
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
@@ -140,7 +206,18 @@ var user = {
   Make that change without modifying the original object code above.
 */
 
+console.log(user)
+
+let newName = user.name
+let newEmail = user.email
+
+user.name = "Bryan G Smith"
+user.email = "bryan.smith@devmounta.in"
+console.log(user)
+
+
 //Code Here
+
 
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
@@ -148,6 +225,9 @@ var user = {
   Using the user object above, delete the users age off of the object.
 */
 
+delete user.age
+
+console.log(user)
 //Code Here
 
 
@@ -160,6 +240,17 @@ var user = {
 
 //Code here
 
+class cat {
+  constructor(name1, age, color){
+    this.name1 = name1;
+    this.age = age;
+    this.color = color;
+  }
+}
+let meow = new cat("Kitty", 4, "gray")
+console.log(meow)
+  
+
 
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
@@ -171,6 +262,26 @@ var user = {
 */
 
 //Code here
+
+class Wizard {
+  constructor (name2, age, favoriteSpell){
+    this.name2 = name2;
+    this.age = age
+    this.favoriteSpell = favoriteSpell;
+  }
+}
+  let castSpell = () => {
+    console.log(`${name2} has cast ${this.favoriteSpell}`)
+  }
+
+let shazam = new Wizard("Merlin", 145, castSpell())
+console.log(shazam)
+
+
+
+
+
+
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
